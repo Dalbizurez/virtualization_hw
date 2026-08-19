@@ -14,26 +14,29 @@
 <img width="1037" height="672" alt="IPv4 Address: 192.168.1.152; Subnet Mask: 255.255.255.0" src="https://github.com/user-attachments/assets/68c5a1eb-e3b4-4383-9721-97102e288b97" />
 
 ### Ping a google.com
-<img width="821" height="181" alt="successful ping to google.com" src="https://github.com/user-attachments/assets/20da3dca-858b-4ef6-ad40-ea772fe753ba" />
+<img width="732" height="177" alt="successful ping to google.com" src="https://github.com/user-attachments/assets/4eaaea05-528d-4cfb-89b1-0a21c88fb5e6" />
+
 
 ## IP Manual dentro de la misma subred
 ### Configuración
 #### Netplan .yaml
-<img width="827" height="219" alt="Netplan coniguration yaml file" src="https://github.com/user-attachments/assets/15628025-f240-4586-94f9-7c9c5ff3c42e" />
+<img width="868" height="327" alt="image" src="https://github.com/user-attachments/assets/f8e07a64-d691-4d11-b141-251e755a45a0" />
+
 
 #### Resultado
-<img width="959" height="702" alt="New IPv4 Address: 192.168.1.185; Subnet Mask: 255.255.255.0" src="https://github.com/user-attachments/assets/2fe351dd-fd70-4278-a449-391df766bd1b" />
+<img width="957" height="701" alt="image" src="https://github.com/user-attachments/assets/5c241ac3-f2f0-4553-8eaa-60b4b055df0e" />
 
 ### Ping a google.com
-<img width="808" height="183" alt="successful ping to google.com" src="https://github.com/user-attachments/assets/53b178be-d854-4826-9762-ab479487c5f7" />
+<img width="728" height="182" alt="image" src="https://github.com/user-attachments/assets/a5e609fd-52a1-41e3-b145-daaf0ce1dc52" />
+
 
 ## IP manual fuera de la subred del hipervisor
 ### Configuración
 #### Netplan .yaml
-<img width="839" height="247" alt="Netplan coniguration yaml file" src="https://github.com/user-attachments/assets/5f7ef6d5-533f-482f-8bb8-bbb906b34bbd" />
+<img width="859" height="331" alt="image" src="https://github.com/user-attachments/assets/038ad7fa-506f-4f24-8345-274a4d1cbdbc" />
 
 #### Resultado
-<img width="962" height="688" alt="image" src="https://github.com/user-attachments/assets/37ed579b-f427-45c9-8d2b-2e620a9cdccf" />
+<img width="958" height="705" alt="image" src="https://github.com/user-attachments/assets/70904f71-fac2-459a-ab53-017e356a235b" />
 
 ### Ping a google.com
-<img width="816" height="180" alt="image" src="https://github.com/user-attachments/assets/471607fa-b0f4-4000-8129-79cd151bd06f" />
+<img width="700" height="184" alt="unsuccessful ping to google" src="https://github.com/user-attachments/assets/fed145f7-ea6e-47e6-a0a1-f7229f0fa09f" />
