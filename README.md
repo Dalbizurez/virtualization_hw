@@ -40,3 +40,6 @@
 
 ### Ping a google.com
 <img width="700" height="184" alt="unsuccessful ping to google" src="https://github.com/user-attachments/assets/fed145f7-ea6e-47e6-a0a1-f7229f0fa09f" />
+
+
+<sub>[Helping sources](https://ubuntu.com/server/docs/explanation/networking/configuring-networks/)</sub>
