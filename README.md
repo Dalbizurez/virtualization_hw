@@ -6,7 +6,7 @@
 ![Metallb installation](media/metallb_install.png)
 
 # Metallb config
-![Metallb config](medida/metallb_config.png)
+![Metallb config](media/metallb_config.png)
 
 # Traekfik working
 ![Traefik_load_balancer](media/treafik_lb.png)
