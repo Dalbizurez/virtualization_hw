@@ -1,0 +1,53 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: app4
+  namespace: parcial-daa
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: app4
+  template:
+    metadata:
+      labels:
+        app: app4
+    spec:
+      containers:
+        - name: app4
+          image: hashicorp/http-echo
+          args: ["-text=Hola desde app4"]
+          ports:
+            - containerPort: 5678
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: app4
+  namespace: parcial-daa
+spec:
+  type: ClusterIP
+  selector:
+    app: app4
+  ports:
+    - port: 80
+      targetPort: 5678
+---
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: app4
+  namespace: parcial-daa
+spec:
+  ingressClassName: traefik
+  rules:
+    - host: app4.midominio.test
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: app4
+                port:
+                  number: 80
