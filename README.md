@@ -1,5 +1,13 @@
-# virtualization_hw
+![argocd installation into argocd-daa namespace](image.png)
 
-### Virtualization homework repository
+![argocd pods and svcs running](image-1.png)
 
-Each branch corresponds to one specific homework
+![configured namespaces](image-2.png)
+
+![argocd ingress apply and result](image-3.png)
+
+![etc/hosts ip addition](image-4.png)
+
+![argocd login](image-5.png)
+
+![argocd dashboard](image-6.png)

@@ -1,0 +1,34 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: apps-ingress
+  namespace: parcial-daa
+  annotations:
+    traefik.ingress.kubernetes.io/router.entrypoints: web
+spec:
+  ingressClassName: traefik
+  rules:
+    - host: app1.parcial.local
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend: { service: { name: app1-svc, port: { number: 80 } } }
+    - host: app2.parcial.local
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend: { service: { name: app2-svc, port: { number: 80 } } }
+    - host: app3.parcial.local
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend: { service: { name: app3-svc, port: { number: 80 } } }
+    - host: app4.parcial.local
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend: { service: { name: app4-svc, port: { number: 80 } } }
