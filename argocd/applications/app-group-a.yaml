@@ -1,0 +1,20 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: daa-group-a
+  namespace: argocd-daa        # la Application vive en el namespace de Argo CD
+spec:
+  project: default
+  source:
+    repoURL: https://github.com/Dalbizurez/virtualization_hw.git
+    targetRevision: assesment-06
+    path: apps/group-a
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: parcial-daa
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+    syncOptions:
+      - CreateNamespace=true

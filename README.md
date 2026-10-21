@@ -11,3 +11,11 @@
 ![argocd login](image-5.png)
 
 ![argocd dashboard](image-6.png)
+
+![argocd succesful repo connection](image-7.png)
+
+![argocd applications](image-8.png)
+
+![argocd application group a](image-9.png)
+
+![kubectl responses](image-10.png)
