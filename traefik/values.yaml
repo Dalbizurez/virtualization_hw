@@ -5,3 +5,6 @@ service:
 providers:
   kubernetesIngress:
     enabled: true
+ingressClass:
+  enabled: true
+  isDefaultClass: true
