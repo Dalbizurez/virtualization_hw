@@ -1,0 +1,61 @@
+{
+  "uid": "logs-daa",
+  "title": "Logs - Apps parcial-daa y Traefik",
+  "schemaVersion": 39,
+  "version": 1,
+  "refresh": "30s",
+  "time": { "from": "now-6h", "to": "now" },
+  "panels": [
+    {
+      "id": 1, "type": "timeseries", "title": "Líneas de log por pod (parcial-daa)",
+      "datasource": { "type": "loki", "uid": "loki" },
+      "gridPos": { "x": 0, "y": 0, "w": 24, "h": 6 },
+      "targets": [
+        { "refId": "A", "legendFormat": "{{pod}}",
+          "expr": "sum by (pod) (count_over_time({namespace=\"parcial-daa\"}[1m]))" }
+      ]
+    },
+    {
+      "id": 2, "type": "logs", "title": "Todas las apps (namespace parcial-daa)",
+      "datasource": { "type": "loki", "uid": "loki" },
+      "gridPos": { "x": 0, "y": 6, "w": 24, "h": 9 },
+      "options": { "showLabels": true, "showTime": true, "wrapLogMessage": true, "sortOrder": "Descending" },
+      "targets": [ { "refId": "A", "expr": "{namespace=\"parcial-daa\"}" } ]
+    },
+    {
+      "id": 3, "type": "logs", "title": "APP 1 - whoami",
+      "datasource": { "type": "loki", "uid": "loki" },
+      "gridPos": { "x": 0, "y": 15, "w": 12, "h": 8 },
+      "options": { "showTime": true, "wrapLogMessage": true, "sortOrder": "Descending" },
+      "targets": [ { "refId": "A", "expr": "{namespace=\"parcial-daa\", pod=~\"app1-whoami-.*\"}" } ]
+    },
+    {
+      "id": 4, "type": "logs", "title": "APP 2 - nginx",
+      "datasource": { "type": "loki", "uid": "loki" },
+      "gridPos": { "x": 12, "y": 15, "w": 12, "h": 8 },
+      "options": { "showTime": true, "wrapLogMessage": true, "sortOrder": "Descending" },
+      "targets": [ { "refId": "A", "expr": "{namespace=\"parcial-daa\", pod=~\"app2-nginx-.*\"}" } ]
+    },
+    {
+      "id": 5, "type": "logs", "title": "APP 3 - httpd",
+      "datasource": { "type": "loki", "uid": "loki" },
+      "gridPos": { "x": 0, "y": 23, "w": 12, "h": 8 },
+      "options": { "showTime": true, "wrapLogMessage": true, "sortOrder": "Descending" },
+      "targets": [ { "refId": "A", "expr": "{namespace=\"parcial-daa\", pod=~\"app3-httpd-.*\"}" } ]
+    },
+    {
+      "id": 6, "type": "logs", "title": "APP 4 - http-echo",
+      "datasource": { "type": "loki", "uid": "loki" },
+      "gridPos": { "x": 12, "y": 23, "w": 12, "h": 8 },
+      "options": { "showTime": true, "wrapLogMessage": true, "sortOrder": "Descending" },
+      "targets": [ { "refId": "A", "expr": "{namespace=\"parcial-daa\", pod=~\"app4-echo-.*\"}" } ]
+    },
+    {
+      "id": 7, "type": "logs", "title": "Traefik",
+      "datasource": { "type": "loki", "uid": "loki" },
+      "gridPos": { "x": 0, "y": 31, "w": 24, "h": 8 },
+      "options": { "showTime": true, "wrapLogMessage": true, "sortOrder": "Descending" },
+      "targets": [ { "refId": "A", "expr": "{namespace=\"traefik\"}" } ]
+    }
+  ]
+}

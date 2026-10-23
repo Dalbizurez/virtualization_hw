@@ -1,0 +1,53 @@
+# En Minikube estos componentes no exponen métricas accesibles y quedarían DOWN
+kubeControllerManager:
+  enabled: false
+kubeScheduler:
+  enabled: false
+kubeEtcd:
+  enabled: false
+kubeProxy:
+  enabled: false
+alertmanager:
+  enabled: false
+
+prometheus:
+  ingress:
+    enabled: true
+    ingressClassName: traefik
+    hosts:
+      - prometheus.parcial.local
+    paths:
+      - /
+    pathType: Prefix
+    annotations:
+      traefik.ingress.kubernetes.io/router.entrypoints: web
+  prometheusSpec:
+    retention: 24h
+    serviceMonitorSelectorNilUsesHelmValues: false
+    podMonitorSelectorNilUsesHelmValues: false
+
+grafana:
+  adminPassword: "admin-daa-lab"      # solo laboratorio; no use una contraseña real en el repo
+  ingress:
+    enabled: true
+    ingressClassName: traefik
+    hosts:
+      - grafana.parcial.local
+    path: /
+    annotations:
+      traefik.ingress.kubernetes.io/router.entrypoints: web
+  persistence:
+    enabled: false
+  # Data sources como código (provisioning)
+  additionalDataSources:
+    - name: Loki
+      uid: loki
+      type: loki
+      access: proxy
+      url: http://loki:3100
+      isDefault: false
+  sidecar:
+    dashboards:
+      enabled: true
+      label: grafana_dashboard
+      labelValue: "1"
